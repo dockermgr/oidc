@@ -623,7 +623,7 @@ HQL_SECRET_RAFT="$(__create_api_key)"
 ENC_KEYS="
 \$ENC_KEY_ACTIVE/$(openssl rand -base64 32)
 "
-$
+
 EOF
 }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
