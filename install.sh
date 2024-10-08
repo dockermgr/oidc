@@ -442,7 +442,7 @@ CONTAINER_WEB_SERVER_WWW_DIR=""
 CONTAINER_WEB_SERVER_WWW_REPO=""
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Specify custom nginx vhosts - autoconfigure: [all.name/name.all/name.mydomain/name.myhost] - [virtualhost,othervhostdom]
-CONTAINER_WEB_SERVER_VHOSTS="oidc.casjay.pro auth.casjay.pro"
+CONTAINER_WEB_SERVER_VHOSTS="auth.casjay.pro"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Add random portmapping - [port,otherport] or [proxy|/location|port]
 CONTAINER_ADD_RANDOM_PORTS=""
