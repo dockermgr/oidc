@@ -620,9 +620,7 @@ __custom_docker_env() {
 ENC_KEY_ACTIVE="$(openssl rand -hex 4)"
 HQL_SECRET_API="$(__create_api_key)"
 HQL_SECRET_RAFT="$(__create_api_key)"
-ENC_KEYS="
-\$ENC_KEY_ACTIVE/$(openssl rand -base64 32)
-"
+ENC_KEYS="$ENC_KEY_ACTIVE/$(openssl rand -base64 32)"
 
 EOF
 }
