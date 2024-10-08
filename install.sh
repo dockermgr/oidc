@@ -219,6 +219,7 @@ $ENC_KEY_ACTIVE/$ENC_KEYS
 EOF
   fi
   if [ -f "$LOCAL_CONFIG_DIR/rauthy/config.cfg" ]; then
+    sed -i "s|REPLACE_HTTP_HOST|$CONTAINER_HOSTNAME|g" "$LOCAL_CONFIG_DIR/rauthy/config.cfg"
     sed -i "s|REPLACE_ENC_KEY_ACTIVE|$ENC_KEY_ACTIVE|g" "$LOCAL_CONFIG_DIR/rauthy/config.cfg"
     sed -i "s|REPLACE_ENC_KEYS|$ENC_KEY_ACTIVE/$ENC_KEYS|g" "$LOCAL_CONFIG_DIR/rauthy/config.cfg"
   fi
