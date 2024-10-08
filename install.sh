@@ -241,8 +241,6 @@ run_post_custom() {
 #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 __show_post_message() {
-  __printf_spacing_color 128 "ADMIN Username:" "$BOOTSTRAP_ADMIN_EMAIL"
-  __printf_spacing_color 128 "ADMIN Password:" "$CONTAINER_USER_PASS"
 
   return 0
 }
@@ -514,13 +512,13 @@ CONTAINER_DATABASE_DIR=""
 HOST_MOUNT_DATABASE_DIR=""
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Set a username and password - [user] [pass/random]
-CONTAINER_USER_NAME=""
-CONTAINER_USER_PASS=""
+CONTAINER_USER_NAME="admin@$CONTAINER_HOSTNAME"
+CONTAINER_USER_PASS="random"
 CONTAINER_PASS_LENGTH="24"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Set container username and password enviroment name - [CONTAINER_ENV_USER_NAME=$CONTAINER_USER_NAME] [CONTAINER_ENV_PASS_NAME=$CONTAINER_USER_PASS]
-CONTAINER_ENV_USER_NAME=""
-CONTAINER_ENV_PASS_NAME=""
+CONTAINER_ENV_USER_NAME="BOOTSTRAP_ADMIN_EMAIL"
+CONTAINER_ENV_PASS_NAME="BOOTSTRAP_ADMIN_PASSWORD_PLAIN"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # If container has an api token set it here - [ENV_NAME] [token/random]
 CONTAINER_API_KEY_NAME="BOOTSTRAP_API_KEY_SECRET"
@@ -642,8 +640,6 @@ __custom_docker_env() {
 PUB_URL="$CONTAINER_HOSTNAME"
 HQL_SECRET_API="$(__create_api_key)"
 HQL_SECRET_RAFT="$(__create_api_key)"
-BOOTSTRAP_ADMIN_EMAIL="$CONTAINER_HOSTNAME"
-BOOTSTRAP_ADMIN_PASSWORD_PLAIN="$(__create_password)"
 #SMTP_URL="smtp://${CONTAINER_EMAIL_RELAY_SERVER:-172.17.0.1}:${CONTAINER_EMAIL_RELAY_PORT:-587}"
 #SMTP_FROM="CasjaysDev IODC <no-reply@$CONTAINER_HOSTNAME>"
 EOF
