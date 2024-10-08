@@ -637,8 +637,8 @@ __custom_docker_env() {
   cat <<EOF | tee -p | grep -v '^$'
 HQL_SECRET_API="$(__create_api_key)"
 HQL_SECRET_RAFT="$(__create_api_key)"
-SMTP_URL="smtp://${CONTAINER_EMAIL_RELAY_SERVER:-172.17.0.1}:${CONTAINER_EMAIL_RELAY_PORT:-587}"
-
+#SMTP_URL="smtp://${CONTAINER_EMAIL_RELAY_SERVER:-172.17.0.1}:${CONTAINER_EMAIL_RELAY_PORT:-587}"
+#SMTP_FROM="CasjaysDev IODC <no-reply@$CONTAINER_HOSTNAME>"
 EOF
 }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
