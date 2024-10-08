@@ -241,8 +241,8 @@ run_post_custom() {
 #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 __show_post_message() {
-  __printf_spacing_color "ADMIN Username:" "$BOOTSTRAP_ADMIN_EMAIL"
-  __printf_spacing_color "ADMIN Password:" "$CONTAINER_USER_PASS"
+  __printf_spacing_color 128 "ADMIN Username:" "$BOOTSTRAP_ADMIN_EMAIL"
+  __printf_spacing_color 128 "ADMIN Password:" "$CONTAINER_USER_PASS"
 
   return 0
 }
