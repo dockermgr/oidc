@@ -617,8 +617,13 @@ __setup_cron() {
 # Set custom container enviroment variables - [MYVAR="VAR"]
 __custom_docker_env() {
   cat <<EOF | tee -p | grep -v '^$'
+ENC_KEY_ACTIVE="$(openssl rand -hex 4)"
 HQL_SECRET_API="$(__create_api_key)"
 HQL_SECRET_RAFT="$(__create_api_key)"
+ENC_KEYS="
+90eb6d69/U9wZG4GS/94pVh6iTH1ijf+kj+tXJHKkQNsp5eImMQI=
+"
+$ENC_KEY_ACTIVE/$(openssl rand -base64 32)
 EOF
 }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
