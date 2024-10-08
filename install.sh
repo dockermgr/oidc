@@ -210,7 +210,7 @@ __pre_docker_install_commands() {
   ENC_KEYS="${ENV_ENV_ENC_KEYS:-$(openssl rand -base64 32)}"
   ENC_KEY_ACTIVE="${ENV_ENC_KEY_ACTIVE:-$(openssl rand -hex 4)}"
   if [ ! -f "$LOCAL_CONFIG_DIR/config/oidc/.env" ]; then
-    cat <<EOF
+    cat <<EOF >"$LOCAL_CONFIG_DIR/config/oidc/.env"
 ENC_KEY_ACTIVE="$ENC_KEY_ACTIVE"
 ENC_KEYS="
 $ENC_KEY_ACTIVE/$ENC_KEYS
